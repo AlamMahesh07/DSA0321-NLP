@@ -1,0 +1,16 @@
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+text = "The leaves on the trees were falling rapidly as the wind blew harder."
+tokens = word_tokenize(text)
+print("Tokens:", tokens)
+stemmer = PorterStemmer()
+stemmed_words = [stemmer.stem(token) for token in tokens]
+print("Stemmed Words:", stemmed_words)
+lemmatizer = WordNetLemmatizer()
+lemmatized_words = [lemmatizer.lemmatize(token) for token in tokens]
+print("Lemmatized Words:", lemmatized_words)
